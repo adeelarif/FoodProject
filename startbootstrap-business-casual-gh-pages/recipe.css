@@ -1,0 +1,28 @@
+.container {
+  width: auto;
+  height: auto;
+  border: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.wrapper{
+  border: solid;
+  width:270px;
+  margin-bottom: 10px;
+}
+
+img{
+  background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    position: relative;
+    width: 13rem;
+    height: 13rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3{
+  text-align: center;
+}
