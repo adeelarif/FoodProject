@@ -1,17 +1,28 @@
 let searchbar = document.querySelector("#recipe");
 let button = document.querySelector(".button");
-let container = document.querySelector(".container");
+let container = document.querySelector(".recipe-result");//this was changed from .container to #resultRow
+let resultRow = document.querySelector("#resultRow");
+let titleRow = document.querySelector("#titleRow");
 
 
 button.addEventListener("click", function search() {
-  container.innerHTML = "";
-  fetch("https://crossorigin.me/http://www.recipepuppy.com/api/?q=" + searchbar.value)
+
+  if($('input[name="radioBtn"]:checked').val() == 'name'){
+
+    resultRow.innerHTML = '';//clear the two rows
+    titleRow.innerHTML = '';
+    $("#shuffle-btn").addClass('hidden');//the previous three rows clear ingredient search if they use ingredent search and then go back to recipe search
+    
+    fetch("http://www.recipepuppy.com/api/?q=" + searchbar.value)
     .then(function(response) {
 
       if (response.status !== 200) {
         console.log(response.status);
         return;
       }
+
+      $(".result-container").removeClass('hidden');
+
       response.json().then(function(obj) {
 
 
@@ -40,4 +51,6 @@ button.addEventListener("click", function search() {
     .catch(function(error) {
       console.log('Fetch Error :-S', err);
     });
+  }
+  
 })
