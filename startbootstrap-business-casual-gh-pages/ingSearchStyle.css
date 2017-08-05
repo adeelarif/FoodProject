@@ -1,0 +1,96 @@
+/*
+Individual style sheet for recipeSearch.html
+*/
+
+.hidden{
+	visibility: hidden;
+}
+
+/*
+Radio Button
+*/
+
+.radio-div{
+	text-align: center;
+}
+
+.radio-div input{
+	margin-left: 10px;
+}
+
+/*
+Ingredient search list and new button
+*/
+
+.list{
+	border: solid black 1px;
+
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 20px;
+	padding-left: 10px;
+
+	width: 60%;
+	min-height: 200px;
+
+	text-align: left;
+}
+
+#q-btn{
+	margin-top:12px;
+}
+
+/*
+New results container styling
+*/
+
+.result-container{
+	background: rgba(255,255,255,0.9);
+}
+
+#resultRow{
+	margin-left: 0;
+	margin-right: 0;
+
+	padding-bottom: 10px;
+
+	width: 100%;
+	display: block;
+}
+
+#titleRow{
+	margin-left: 0;
+	margin-right: 0;
+
+	width: 100%;
+}
+
+#titleRow h3{
+	text-align: left;
+}
+
+.divider{/*This is so there is a visible gap between the results and the footer*/
+	width: 100%;
+	min-height: 25px;
+}
+
+/*
+Shuffle Button styles
+*/
+
+#shuffle-btn {
+	margin: 30px auto;  
+
+  	background-image: linear-gradient(to bottom, #ff9832, #ff8003);
+
+  	color: #ffffff;
+  	font-size: 20px;
+  	padding: 10px 20px 10px 20px;
+  	text-decoration: none;
+}
+
+#shuffle-btn:hover {
+  	background: #3cb0fd;
+  	background-image: linear-gradient(to bottom, #eeb032, #ee9803);
+  	text-decoration: none;
+}
