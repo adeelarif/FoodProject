@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FindMeFoodWeb</title>
+			<meta charset="utf-8" />
+			<meta name="description" content="Online Location Bases restaurant recommender">
+  			<meta name="keywords" content="Food,Restaurants,Hungry,Location,Map,Google">
+  			<meta name="author" content="Eduardo Aguilar Leal">
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<link type="text/css" rel="stylesheet" href="styles.css" />
+			<link rel = "icon" href = "images/MarkerB.png">
+	</head>
+	<body>
+		<div id = "wrapper">
+			<div id = "aboveMap">
+				<!-- <h1>Find My Food</h1> -->
+				<div class="alert" id="alert">
+  					<span class="closebtn">&times;</span>Please enable location services in your browser.
+  				</div>
+				<div id='placeInfo'>
+					<h1 id='number'>
+						Number Place
+					</h1>
+					<img id='image' src=""/>
+					<p>
+						<a id = 'website' href="" target="_blank">Website</a>
+					</p>
+					<p id = 'phone'>
+						Descripcion place
+					</p>
+					<p id = 'rating'>
+						Descripcion place
+					</p>
+					<p>
+						<a id = 'maps' href="" target="_blank">Maps</a>
+					</p>
+				</div>
+
+			</div>
+
+			<div id = "map"></div>
+		</div>
+		<img src ="images/FindeMeFoodIconB.svg" id="logo"/>
+		<!-- API -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="javascript/snabbt.min.js"></script>
+		<script type="text/javascript" src="javascript/script.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXW1WwAuhZuyoH33mU-EwzMkrPGBCgsnw&libraries=places&callback=initMap"></script>
+		<script>
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-92824411-1', 'auto');
+			ga('send', 'pageview');
+
+		</script>
+	</body>
+</html>
