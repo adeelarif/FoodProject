@@ -13,7 +13,7 @@ button.addEventListener("click", function search() {
     titleRow.innerHTML = '';
     $("#shuffle-btn").addClass('hidden');//the previous three rows clear ingredient search if they use ingredent search and then go back to recipe search
     
-    fetch("http://www.recipepuppy.com/api/?q=" + searchbar.value)
+    fetch("https://crossorigin.me/http://www.recipepuppy.com/api/?q=" + searchbar.value)
     .then(function(response) {
 
       if (response.status !== 200) {
