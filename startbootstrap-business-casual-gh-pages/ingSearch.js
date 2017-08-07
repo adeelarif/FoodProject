@@ -71,7 +71,7 @@ $('#q-btn').click(function(){
 var data;
 var xhttp = new XMLHttpRequest();
 
-var url = "http://www.recipepuppy.com/api/?i="//api link set up for ingredient search
+var url = "https://crossorigin.me/http://www.recipepuppy.com/api/?i="//api link set up for ingredient search
 
 for(var i in ingredients){
 	url += ingredients[i] + ","//add all ingredients to the url seperated by commas
