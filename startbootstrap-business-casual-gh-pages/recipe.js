@@ -9,8 +9,10 @@ button.addEventListener("click", function search() {
 
   if($('input[name="radioBtn"]:checked').val() == 'name'){
 
-    resultRow.innerHTML = '';//clear the two rows
+    resultRow.innerHTML = '';//clear the three rows
     titleRow.innerHTML = '';
+    container.innerHTML = '';
+    
     $("#shuffle-btn").addClass('hidden');//the previous three rows clear ingredient search if they use ingredent search and then go back to recipe search
     
     fetch("http://www.recipepuppy.com/api/?q=" + searchbar.value)

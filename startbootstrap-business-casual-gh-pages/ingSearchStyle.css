@@ -45,10 +45,16 @@ New results container styling
 */
 
 .result-container{
+	margin: 10px 50px;
+	padding: 10px;
+	padding-bottom: 0;
+
 	background: rgba(255,255,255,0.9);
+	justify-content: center;
 }
 
 #resultRow{
+	padding:10px;
 	margin-left: 0;
 	margin-right: 0;
 
@@ -58,7 +64,12 @@ New results container styling
 	display: block;
 }
 
+#resultRow .col-sm-3{
+
+}
+
 #titleRow{
+	padding:10px;
 	margin-left: 0;
 	margin-right: 0;
 
@@ -69,9 +80,18 @@ New results container styling
 	text-align: left;
 }
 
+#titleRow .col-sm-3{
+	
+}
+
 .divider{/*This is so there is a visible gap between the results and the footer*/
 	width: 100%;
 	min-height: 25px;
+}
+
+.wrapper{
+	margin: 10px;
+
 }
 
 /*
@@ -81,9 +101,11 @@ Shuffle Button styles
 #shuffle-btn {
 	margin: 30px auto;  
 
-  	background-image: linear-gradient(to bottom, #ff9832, #ff8003);
+  	background-image: linear-gradient(to bottom, #cccccc, #cdcdcd);
 
-  	color: #ffffff;
+  	font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+  	font-weight: bold;
+  	color: #000000;
   	font-size: 20px;
   	padding: 10px 20px 10px 20px;
   	text-decoration: none;
@@ -91,6 +113,6 @@ Shuffle Button styles
 
 #shuffle-btn:hover {
   	background: #3cb0fd;
-  	background-image: linear-gradient(to bottom, #eeb032, #ee9803);
+  	background-image: linear-gradient(to bottom, #dddddd, #dedede);
   	text-decoration: none;
 }

@@ -16,12 +16,14 @@ $('input:radio').on('click', function(e) {
 	
     if(e.currentTarget.value == 'ingredients'){
     	$('.ingSearch').removeClass('hidden');//make the new material visible by removing hidden class
+    	$('.result-container').addClass('hidden');
 
     	searchbar.placeholder = "Add Ingredient";//change the wording on button and search bar
     	button.innerHTML = 'Add Ingredient';
 
     }else{//change everything back to normal
     	$('.ingSearch').addClass('hidden');
+    	$('.result-container').addClass('hidden');
 
     	searchbar.placeholder = "Search Recipe";
     	button.innerHTML = 'Search';
