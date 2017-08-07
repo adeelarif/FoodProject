@@ -1,7 +1,7 @@
 html,body, #wrapper{
-	margin: 0px;
-	height: 100%;
-	width: 100%;
+	margin: 6px;
+	height: 99%;
+	width: 99%;
 	font-family: sans-serif;
 }
 #aboveMap{
@@ -14,7 +14,7 @@ html,body, #wrapper{
     width: 100%;
     position: relative;
     z-index: 0;
-    border: 20px solid #999999;
+    border: #FDFEFE solid 20px;
 }
 #placeInfo{
 	background-color: white;
@@ -35,10 +35,9 @@ html,body, #wrapper{
 }
 
 #logo{
-	height: 100px;
-
+	height: 75px;
 	position: absolute;
-	left: 1300px;
+	left: 1150px;
 	top: 75px;
 
 
