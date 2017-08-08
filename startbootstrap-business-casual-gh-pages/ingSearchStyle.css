@@ -53,7 +53,7 @@ New results container styling
 	justify-content: center;
 }
 
-#resultRow{
+.resultRow{
 	padding:10px;
 	margin-left: 0;
 	margin-right: 0;
@@ -64,11 +64,12 @@ New results container styling
 	display: block;
 }
 
-#resultRow .col-sm-3{
-
+.resultRow .col-sm-3 img{
+	display: block;
+	margin: 0 auto;
 }
 
-#titleRow{
+.titleRow{
 	padding:10px;
 	margin-left: 0;
 	margin-right: 0;
@@ -76,11 +77,11 @@ New results container styling
 	width: 100%;
 }
 
-#titleRow h3{
-	text-align: left;
+.titleRow h3{
+	text-align: center;
 }
 
-#titleRow .col-sm-3{
+.titleRow .col-sm-3{
 	
 }
 
