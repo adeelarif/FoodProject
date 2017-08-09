@@ -10,15 +10,15 @@ html,body {
 	width: 50%;
 }
 #aboveMap{
-	z-index: 1;
-	position: absolute;
+	
 
 }
+
 #map {
-    height: 98%;
+    height: 500px;
     width: 100%;
-    position: relative;
-    z-index: 0;
+    margin: 0 auto;
+    
     border: #FDFEFE solid 20px;
 }
 #placeInfo{
@@ -26,8 +26,7 @@ html,body {
 	padding: 10px;
 	border-style: #FDFEFE solid 20px;
     border-color: #000; /*Note to me: adjust the color later according to the template*/
-    margin-left: 62em;
-    margin-top: -390px;
+
 }
 #placeInfo h1, #placeInfo p{
 	margin: 5px;
@@ -41,9 +40,8 @@ html,body {
 
 #logo{
 	height: 75px;
-	position: absolute;
-	left: 900px;
-	top: -4.5em;
+
+
 
 
 	/* margin-top: -100px; /* Negative half of height. */
