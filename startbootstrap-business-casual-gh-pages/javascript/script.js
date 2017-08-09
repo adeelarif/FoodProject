@@ -153,8 +153,8 @@ var nightStyle = [{
 function initMap() {
     //Initial positon
     var initLocation = {
-        lat: 25.6515651,
-        lng: -100.2895398
+        lat: 40.52093,
+        lng: -74.4057
     };
 
     //Initianlise map

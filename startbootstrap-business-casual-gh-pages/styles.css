@@ -1,8 +1,13 @@
-html,body, #wrapper{
-	margin: 6px;
-	height: 99%;
-	width: 99%;
+html,body {
+	margin: 0px;
+	height: 100%;
+	width: 100%;
 	font-family: sans-serif;
+}
+#wrapper{
+	margin-left: 9.5em;
+	height: 50%;
+	width: 50%;
 }
 #aboveMap{
 	z-index: 1;
@@ -18,11 +23,11 @@ html,body, #wrapper{
 }
 #placeInfo{
 	background-color: white;
-	margin: 35px;
 	padding: 10px;
-	border-radius: 25px;
-	border-style: solid;
+	border-style: #FDFEFE solid 20px;
     border-color: #000; /*Note to me: adjust the color later according to the template*/
+    margin-left: 62em;
+    margin-top: -390px;
 }
 #placeInfo h1, #placeInfo p{
 	margin: 5px;
@@ -37,28 +42,15 @@ html,body, #wrapper{
 #logo{
 	height: 75px;
 	position: absolute;
-	left: 600px;
-	top: 75px;
+	left: 900px;
+	top: -4.5em;
 
 
 	/* margin-top: -100px; /* Negative half of height. */
 	/*margin-left: -100px; /* Negative half of width. */
 }
-
-@media (max-width: 765px) {
-    #logo{
-		height: 100px;
-		left: 1000px;
-		top: 550px;
-		/*margin-top: -50px; /* Negative half of height. */
-		/*margin-left: -50px; /* Negative half of width. */
-	}
-	#placeInfo h1 {
-		font-size: 20px;
-	}
-	#placeInfo p {
-		font-size: 10px;
-	}
+/*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
+@media screen and (min-width: 1024px){
 
 }
 
