@@ -115,7 +115,7 @@ function whenLoaded(e){
 
 	$("html,body").delay(100).animate({
 		scrollTop: $('#resultsScroll').offset().top
-	}, 2000);
+	}, 500);
 
 }//whenLoaded end
 
