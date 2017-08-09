@@ -377,7 +377,7 @@ $(function() {
         closeAlert();
     });
 
-    $button = $("#aboveMap img");
+    $button = $("#aboveMap #logo");
     $button.on('click', function(e) {
         //window.alert("picaste");
         rotateImg(e);
