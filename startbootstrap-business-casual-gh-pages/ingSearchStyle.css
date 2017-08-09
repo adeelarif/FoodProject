@@ -34,6 +34,20 @@ Ingredient search list and new button
 	min-height: 200px;
 
 	text-align: left;
+	position: relative;
+}
+
+.list span{
+	position: absolute;
+	bottom: 0px;
+
+	width: 100%;
+
+	text-align: center;
+}
+
+.ing-list li:hover{
+	cursor: pointer;
 }
 
 #q-btn{

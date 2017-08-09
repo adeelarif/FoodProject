@@ -106,6 +106,10 @@ function addRecipes(){
 
       start+=4;
 
+      $("html,body").delay(100).animate({
+    scrollTop: $('#resultsScroll').offset().top
+  }, 500);
+
 }//addRecipes end
 
 $('#shuffle-btn').click(function(){

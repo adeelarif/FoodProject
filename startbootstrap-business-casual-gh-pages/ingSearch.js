@@ -50,7 +50,11 @@ button.addEventListener("click", function() {
 		}else{
 			
 			ingredients.push(ingredient);//add to the array
-			$(".ing-list").append('<li>' + ingredient + '</li>')//add to the html list
+			var listItem = $('<li/>').text(ingredient).on("click",function() 
+				{ $(this).remove();
+					removeFromIngredients(ingredient)});
+
+			$(".ing-list").append(listItem)//add to the html list
 			console.log(ingredients);
 		}
 	}
@@ -58,11 +62,26 @@ button.addEventListener("click", function() {
 	
 })
 
+function removeFromIngredients(ingredient){
+	for(var i = 0; i < ingredients.length; i++){
+		if(ingredients[i] == ingredient){
+			ingredients.splice(i,1);
+			i = ingredients.length;
+		}
+	}
+}
+
 
 /*This is the search ingredients button click event. This even is only ever possible when the ingredients radio button is selected
 otherwise this button is hidden and unclickable*/
 
 $('#q-btn').click(function(){
+
+if(ingredients.length == 0){
+	alert("You Have Not Entered Any Ingredients");
+}else{
+
+
 
 container.innerHTML = "";
 
@@ -112,6 +131,8 @@ function whenLoaded(e){
 	}, 500);
 
 }//whenLoaded end
+
+}//if else end
 
 })//q-btn click end
 
@@ -174,6 +195,10 @@ function addRecipes(){
 			container.innerHTML += result;
 
 			start+=4;
+
+		$("html,body").delay(100).animate({//scroll to show new recipes
+		scrollTop: $('#resultsScroll').offset().top
+	}, 500);
 
 }//addRecipes end
 	
