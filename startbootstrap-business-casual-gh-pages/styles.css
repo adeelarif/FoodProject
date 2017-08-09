@@ -49,11 +49,6 @@ html,body {
 	/* margin-top: -100px; /* Negative half of height. */
 	/*margin-left: -100px; /* Negative half of width. */
 }
-/*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
-@media screen and (min-width: 1024px){
-
-}
-
 /* The alert message box */
 .alert{
     position: fixed;
