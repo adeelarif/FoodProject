@@ -40,6 +40,8 @@ html,body {
 
 #logo{
 	height: 75px;
+    position: absolute;
+    top: 425px;
 
 
 
