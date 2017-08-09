@@ -4,8 +4,6 @@ $(document).ready(function(){
 let searchbar = document.querySelector("#recipe");
 let button = document.querySelector(".button");
 let container = document.querySelector(".recipe-result");//container of recipe search result
-let resultRow = document.querySelector("#resultRow");//imng and anchor of ingredient search reult
-let titleRow = document.querySelector("#titleRow");//title of ingredient search result
 
 var globalData;//global data variable of the xhttprquest so length and data can be used between methods without parameters
 var start = 0;
@@ -36,11 +34,9 @@ $('input:radio').on('click', function(e) {
 
 var ingredients = new Array();//array of ingredients to be populated
 
- button.addEventListener("click", function() {
-	
-	var radioBtnValue = $('input[name="radioBtn"]:checked').val();
+button.addEventListener("click", function() {
 
-	if(radioBtnValue == 'ingredients'){//make sure ingredients is the selected radio button. if not do nothing - it is handled in another script file
+	if($('input[name="radioBtn"]:checked').val() == 'ingredients'){//make sure ingredients is the selected radio button. if not do nothing - it is handled in another script file
 
 		var ingredient = searchbar.value;
 		console.log(ingredient);
@@ -54,7 +50,11 @@ var ingredients = new Array();//array of ingredients to be populated
 		}else{
 			
 			ingredients.push(ingredient);//add to the array
-			$(".ing-list").append('<li>' + ingredient + '</li>')//add to the html list
+			var listItem = $('<li/>').text(ingredient).on("click",function() 
+				{ $(this).remove();
+					removeFromIngredients(ingredient)});
+
+			$(".ing-list").append(listItem)//add to the html list
 			console.log(ingredients);
 		}
 	}
@@ -62,11 +62,28 @@ var ingredients = new Array();//array of ingredients to be populated
 	
 })
 
+function removeFromIngredients(ingredient){
+	for(var i = 0; i < ingredients.length; i++){
+		if(ingredients[i] == ingredient){
+			ingredients.splice(i,1);
+			i = ingredients.length;
+		}
+	}
+}
+
 
 /*This is the search ingredients button click event. This even is only ever possible when the ingredients radio button is selected
 otherwise this button is hidden and unclickable*/
 
 $('#q-btn').click(function(){
+
+if(ingredients.length == 0){
+	alert("You Have Not Entered Any Ingredients");
+}else{
+
+
+
+container.innerHTML = "";
 
 var data;
 var xhttp = new XMLHttpRequest();
@@ -89,26 +106,22 @@ url = url.substring(0, url.length - 1);//remove the trialing comma from the url 
 
 function whenLoaded(e){
 
-	resultRow.innerHTML = '';//clear the two rows
-	titleRow.innerHTML = '';
-	container.innerHTML = '';
+	start = 0;
+	$('#shuffle-btn').html('Show More Recipes');
 
 	//document.getElementById("resultsScroll").scrollIntoView();
 	//$(".result-container").scrollIntoView();
 
-
-	console.log('loaded');
 	data = JSON.parse(xhttp.responseText);
 	globalData = data;
 
 	length = data.results.length;
 
-
 	console.log(data);
 	console.log(globalData);
 	//console.log(data.results[0].ingredients);
 
-	addRecipes(data, 0);//This adds the recipes to the 
+	addRecipes();//This adds the recipes to the 
 
 	$(".result-container").removeClass('hidden');
 	$("#shuffle-btn").removeClass('hidden');
@@ -119,74 +132,75 @@ function whenLoaded(e){
 
 }//whenLoaded end
 
+}//if else end
+
 })//q-btn click end
 
 /*Shuffle button event*/
-
 $('#shuffle-btn').click(function(){
-	
 
-	if(start+4>length){//if the index# of the last result is greater than length(doesn't exist)
-		start = -4;//reset to the first result (-4 because it gives parameter of start+4 -- therefore -4 = 0)
-	}
-
-	addRecipes(globalData, start+4);
-
-	start += 4;//increment global variable start by 4
-	console.log(length);
-
-	
+ if($('input[name="radioBtn"]:checked').val() == 'ingredients'){
+  if(start+4>length){
+    $('#shuffle-btn').html('NO MORE RECIPES');
+  }
+  if(start>length){
+   
+  }//reset to the first result (-4 because it gives parameter of start+4 -- therefore -4 = 0)
+  else{
+    addRecipes(); 
+  }
+}
+  
 })//end shuffle button
 
-/*Method for adding the fetched content to the page
-This adds 4 recipes to the page using their order as they are fetched from the api.
-Starting point is the index of results(recipes) returned from the api
-When startingPoint = 0 this function adds the first 4 recipes, 
-when sP = 4 it returns the next 4 recipes*/
+function addRecipes(){
 
-function addRecipes(data, startingPoint){
+	var titleCols = '';
+	var resultCols = '';
 
-	console.log(startingPoint);
-
-	resultRow.innerHTML = '';//clear the two rows
-	titleRow.innerHTML = '';
-
-	var start;
-
-	if(startingPoint>length){
+	for(var i = start; i < start+4; i++){//add 4 recipes at a time
 		
-	}
-
-	var ingArray = data.results[0].ingredients.split(", ");
-	console.log(ingArray);//split the ingredients returned into an array, this is not used yet
-
-	for(var i = startingPoint; i < startingPoint+4; i++){
-
-
 		if(i < length){//if i will go out of bounds, don't do anything because it will cause error otherwise
-			let imagesource = data.results[i].thumbnail
-    		let title = data.results[i].title
-    		let link = data.results[i].href
+
+		let imagesource = globalData.results[i].thumbnail
+    	let title = globalData.results[i].title
+    	let link = globalData.results[i].href
+
+		titleCols += 
+			`<div class="col-sm-3">
+          	<h3>${title}<h3>
+            </div>`;
+
+        resultCols +=
+        	`<div class="col-sm-3"> 
+    		<a href="${link}">
+    		<img src="${imagesource}" onError="this.src='dinner plate.png'">
+    		</a>
+    		</div>`
+		}//end iff statement
+	}//end for loop
 
 			var titleResult = `
-            	<div class="col-sm-3">
-          		<h3>${title}<h3>
-            	</div>`;
+				<div class="row titleRow">`
+            	+ titleCols +
+            	`</div>`;
 
-   	 		var result = `
-    			<div class="col-sm-3"> 
-    			<a href="${link}">
-    			<img src="${imagesource}" onError="this.src='dinner plate.png'">
-    			</a>
-    			</div>` 
+   	 		var result = 
+   	 			`<div class="row resultRow">`
+            	+ resultCols +
+            	`</div>`;
 
-			resultRow.innerHTML += result;
-			titleRow.innerHTML += titleResult;
+			
+			container.innerHTML += titleResult;
+			container.innerHTML += result;
 
-		}//if statement end
-	}//for loop end	
+			start+=4;
 
+		$("html,body").delay(100).animate({//scroll to show new recipes
+		scrollTop: $('#resultsScroll').offset().top
+	}, 500);
 
 }//addRecipes end
+	
 
 })//document ready end
