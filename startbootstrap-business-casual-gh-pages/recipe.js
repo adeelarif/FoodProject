@@ -78,12 +78,14 @@ function addRecipes(){
 
     titleCols += 
       `<div class="col-sm-3">
+            <a href="${link}" target="_blank">
             <h3>${title}<h3>
+            </a>
             </div>`;
 
         resultCols +=
           `<div class="col-sm-3"> 
-        <a href="${link}">
+        <a href="${link}" target="_blank">
         <img src="${imagesource}" onError="this.src='dinner plate.png'">
         </a>
         </div>`
