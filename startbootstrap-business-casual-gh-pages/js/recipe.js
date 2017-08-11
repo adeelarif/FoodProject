@@ -86,7 +86,7 @@ function addRecipes(){
         resultCols +=
           `<div class="col-sm-3"> 
         <a href="${link}" target="_blank">
-        <img src="${imagesource}" onError="this.src='dinner plate.png'">
+        <img src="${imagesource}" onError="this.src='img/dinner plate.png'">
         </a>
         </div>`
     }//end iff statement

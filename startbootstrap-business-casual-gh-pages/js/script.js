@@ -191,7 +191,7 @@ function initMap() {
                 var marker = new google.maps.Marker({
                     map: map,
                     position: pos,
-                    icon: 'images/MarkerBE.png',
+                    icon: 'img/MarkerBE.png',
                     animation: google.maps.Animation.DROP
                 });
 
@@ -291,7 +291,7 @@ function createMarker(place) {
     var marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
-        icon: 'images/MarkerWE.png',
+        icon: 'img/MarkerWE.png',
         animation: google.maps.Animation.DROP
     });
     //push marker into markers array
