@@ -20,7 +20,7 @@ button.addEventListener("click", function search() {
     var data;
     var xhttp = new XMLHttpRequest();
 
-    var url = "http://www.recipepuppy.com/api/?q=" + searchbar.value;
+    var url = "http://rvccmccs01.raritanval.edu/~scaruso/iti332/recipepuppy.php?q=" + searchbar.value;
     //url = "https://crossorigin.me/" + url;//append crossorigin to the url cross origin
     //url = 'http://anyorigin.com/go?url=' + url;//append crossorigin to the url
 

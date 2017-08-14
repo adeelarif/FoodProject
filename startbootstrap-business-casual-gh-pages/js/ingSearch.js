@@ -88,7 +88,7 @@ container.innerHTML = "";
 var data;
 var xhttp = new XMLHttpRequest();
 
-var url = "http://www.recipepuppy.com/api/?i="//api link set up for ingredient search
+var url = "http://rvccmccs01.raritanval.edu/~scaruso/iti332/recipepuppy.php?i="//api link set up for ingredient search
 
 for(var i in ingredients){
 	url += ingredients[i] + ","//add all ingredients to the url seperated by commas
@@ -176,7 +176,7 @@ function addRecipes(){
         resultCols +=
         	`<div class="col-sm-3"> 
     		<a href="${link}" target="_blank">
-    		<img src="${imagesource}" onError="this.src='dinner plate.png'">
+    		<img src="${imagesource}" onError="this.src='img/dinner plate.png'">
     		</a>
     		</div>`
 		}//end iff statement
