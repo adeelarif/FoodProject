@@ -308,10 +308,6 @@ function setInfo(place) {
     //Place Photo
     if(place.photos){
         $placeImg.attr("src", place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}));
-        // <a href="${link}" target="_blank">
-        // $placeImg.attr("src", "target","_blank");
-        //$placeImg.wrap($('<a>',{href: place.website })); //this works
-
         $('#photoAnchor').attr("href", place.website);
         
     }else{
