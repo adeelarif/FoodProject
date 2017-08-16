@@ -379,7 +379,7 @@ $(function() {
         closeAlert();
     });
 
-    $button = $("#aboveMap #logo");
+    $button = $("#logo");
     $button.on('click', function(e) {
         //window.alert("picaste");
         rotateImg(e);

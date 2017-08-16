@@ -10,18 +10,28 @@ html,body {
 	width: 50%;
 }
 #aboveMap{
-	
+	height: 480px;
 
 }
 
 #map {
-    height: 500px;
+    height: 480px;
     width: 100%;
     margin: 0 auto;
     
     border: #FDFEFE solid 20px;
 }
+
+.map-row{
+    height: 540px;
+}
+
+.map-col{
+
+}
+
 #placeInfo{
+    
 	background-color: white;
 	padding: 10px;
 	border-style: #FDFEFE solid 20px;
