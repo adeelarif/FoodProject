@@ -169,16 +169,19 @@ function addRecipes(){
 		titleCols += 
 			`<div class="col-sm-3">
 			<a href="${link}" target="_blank">
+    		<img src="${imagesource}" onError="this.src='img/dinner plate.png'" class="result-img">
+    		</a>
+			<a href="${link}" target="_blank">
           	<h3>${title}<h3>
           	</a>
             </div>`;
 
-        resultCols +=
-        	`<div class="col-sm-3"> 
-    		<a href="${link}" target="_blank">
-    		<img src="${imagesource}" onError="this.src='img/dinner plate.png'">
-    		</a>
-    		</div>`
+      //   resultCols +=
+      //   	`<div class="col-sm-3"> 
+    		// <a href="${link}" target="_blank">
+    		// <img src="${imagesource}" onError="this.src='img/dinner plate.png'">
+    		// </a>
+    		// </div>`
 		}//end iff statement
 	}//end for loop
 
@@ -187,14 +190,14 @@ function addRecipes(){
             	+ titleCols +
             	`</div>`;
 
-   	 		var result = 
-   	 			`<div class="row resultRow">`
-            	+ resultCols +
-            	`</div>`;
+   	 		// var result = 
+   	 		// 	`<div class="row resultRow">`
+       //      	+ resultCols +
+       //      	`</div>`;
 
 			
 			container.innerHTML += titleResult;
-			container.innerHTML += result;
+			// container.innerHTML += result;
 
 			start+=4;
 

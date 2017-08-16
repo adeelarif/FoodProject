@@ -78,7 +78,7 @@ New results container styling
 	display: block;
 }
 
-.resultRow .col-sm-3 img{
+.result-img{
 	display: block;
 	margin: 0 auto;
 }
