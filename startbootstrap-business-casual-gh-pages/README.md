@@ -1,4 +1,5 @@
-Hello Every one, Our project required us to utilize two APIs and inject it within a website so the API data comes out good.  
+Hello Every one, Our project required us to utilize two APIs.  We have used the following APIs: Recipe Puppy and Google Maps.
+
 For our template we used the following:
 # [Start Bootstrap](http://startbootstrap.com/) - [Business Casual](http://startbootstrap.com/template-overviews/business-casual/)
 
